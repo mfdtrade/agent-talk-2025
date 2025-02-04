@@ -1,0 +1,17 @@
+{
+  "name": "agent-talk-2025",
+  "version": "1.0.0",
+  "description": "Code and Content for Lets Build an Agent Talk Feb 2025",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "step:0": "node -r dotenv/config src/step0/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^4.82.0"
+  }
+}
