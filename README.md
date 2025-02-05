@@ -22,6 +22,8 @@ OpenAI hello world (https://platform.openai.com/docs/quickstart#make-your-first-
 
 ## 2: Tools:
 
+Thumb.io for screenshots
+
 
 ## 
 

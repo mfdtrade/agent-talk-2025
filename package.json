@@ -7,6 +7,7 @@
   "scripts": {
     "step:0": "node -r dotenv/config src/step0/index.js",
     "step:1": "node -r dotenv/config src/step1/index.js",
+    "step:2": "node -r dotenv/config src/step2/index.js",
     "test": "echo 'What me worry?'"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "openai": "^4.82.0",
+    "serpapi": "^2.1.0",
     "zod": "^3.24.1"
   }
 }
