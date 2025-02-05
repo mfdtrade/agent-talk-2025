@@ -9,7 +9,7 @@ Expand terms:
     | agent = llm + (remember + recall) + planning + tools + (condition + loop)
 
 Rearrange:
-agent = llm + condition + tools + remember + recall + loop + planning
+    | agent = llm + condition + tools + recall + remember + loop + planning
 
 
 ## 0: LLM
@@ -22,9 +22,15 @@ OpenAI hello world (https://platform.openai.com/docs/quickstart#make-your-first-
 
 ## 2: Tools:
 
+
+## 
+
+
 Planning:
 - prompt for step by step plan, push each onto todo list array
 - addTodoToList, checkTodoList, markTodoDone
+- Ask your boss for help making a decision
+
 
 Memory:
 
