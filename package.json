@@ -5,9 +5,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "step:0": "node -r dotenv/config src/step0/index.js",
-    "step:1": "node -r dotenv/config src/step1/index.js",
-    "step:2": "node -r dotenv/config src/step2/index.js",
+    "step:0": "node -r dotenv/config src/step0-llm/index.js",
+    "step:1": "node -r dotenv/config src/step1-condition/index.js",
+    "step:2": "node -r dotenv/config src/step2-tool/index.js",
     "test": "echo 'What me worry?'"
   },
   "keywords": [],

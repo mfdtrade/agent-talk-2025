@@ -18,14 +18,21 @@ OpenAI hello world (https://platform.openai.com/docs/quickstart#make-your-first-
 
 ## 1: Condition
 
+Check if the LLM call meets the requested question.
 
 
 ## 2: Tools:
 
-Thumb.io for screenshots
+SerpAPI for web search
 
 
-## 
+## 3: Recall
+
+## 4: Remember
+
+## 5: Loop
+
+## 6: Planning
 
 
 Planning:

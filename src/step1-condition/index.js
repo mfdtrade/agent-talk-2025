@@ -11,22 +11,29 @@ const doneResponseSchema = z.object({
 });
 
 async function main() {
+  console.log("\n\n"+"#".repeat(40));
+  console.log(`Question: ${prompt}`);
+
   const completion = await openai.chat.completions.create({
     messages: [{ role: "developer", content: prompt }],
     model: "gpt-4o-mini",
+    store: false
   });
 
-  console.log(completion.choices[0].message);
+  const answer = completion.choices[0].message.content
+  console.log("\n\n"+"#".repeat(40));
+  console.log(`Answer: ${answer}`);
 
   const check = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [{
       role: "developer",
-      content: `Given the following question, determine if the answer is sufficent.\n\nQuestion: ${prompt}\n\nAnswer: ${completion.choices[0].message.content}`,
+      content: `You are a strict critic. Given the following question, determine if the answer a full anwser to the question.\n\nQuestion: ${prompt}\n\nAnswer: ${answer}`,
     }],
     response_format: zodResponseFormat(doneResponseSchema, "doneResponseSchema")
   })
-  console.log(check.choices[0].message)
+  console.log("\n\n"+"#".repeat(40));
+  console.log(`LLM as judge: ${JSON.parse(check.choices[0].message.content).done ? "👍":"👎"}`)
 }
 
 main();
