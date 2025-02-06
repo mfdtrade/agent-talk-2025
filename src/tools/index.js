@@ -1,11 +1,21 @@
 import { searchGoogle, searchGoogleToolConfig } from "./searchGoogle.js";
+import { markTodoDone, markTodoDoneToolConfig,
+        addTodos, addTodosToolConfig,
+        checkTodos, checkTodosToolConfig
+     } from "./todoList.js";
 
 export const functions = {
-    searchGoogle
+    searchGoogle,
+    addTodos,
+    markTodoDone,
+    checkTodos
 }
 
 export const configsArray = [
-    searchGoogleToolConfig
+    searchGoogleToolConfig,
+    addTodosToolConfig,
+    markTodoDoneToolConfig,
+    checkTodosToolConfig
 ]
 
 export default {

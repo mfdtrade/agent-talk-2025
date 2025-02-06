@@ -2,7 +2,6 @@ import { z } from 'zod'
 import { zodResponseFormat } from 'openai/helpers/zod';
 import tools from '../tools/index.js';
 import { completeWithTools, openai } from '../utils/ai.js';
-
 const prompt = "I want to buy a hoodie with a fur lined hood. It needs a full zipper. Near Times Square in NYC. Where can I buy one today at lunch time?"
 
 const doneResponseSchema = z.object({
