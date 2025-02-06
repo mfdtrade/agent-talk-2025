@@ -5,9 +5,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "step:0": "node -r dotenv/config src/step0-llm/index.js",
-    "step:1": "node -r dotenv/config src/step1-condition/index.js",
-    "step:2": "node -r dotenv/config src/step2-tool/index.js",
+    "step0-llm": "node -r dotenv/config src/_steps/step0-llm.js",
+    "step1-condition": "node -r dotenv/config src/_steps/step1-condition.js",
+    "step2-tool": "node -r dotenv/config src/_steps/step2-tool.js",
+    "step3-refactor": "node -r dotenv/config src/_steps/step3-refactor.js",
     "test": "echo 'What me worry?'"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.7",
+    "minisearch": "^7.1.1",
     "openai": "^4.82.0",
     "serpapi": "^2.1.0",
     "zod": "^3.24.1"

@@ -14,7 +14,7 @@ const doneResponseSchema = z.object({
 
 async function searchGoogle({query, location="Philadelphia, PA"}) {
   console.log("\n\n"+"#".repeat(40))
-  console.log(`Searching Goolge[${location}]: ${query}\n\n`)
+  console.log(`Searching Google[${location}]: ${query}\n\n`)
   const resp = await serp.getJson({
     engine: "google",
     api_key: process.env.SERP_API_KEY, // Get your API_KEY from https://serpapi.com/manage-api-key
