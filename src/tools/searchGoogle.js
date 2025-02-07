@@ -2,16 +2,13 @@ import * as serp from "serpapi";
 import { z } from "zod";
 import { zodFunction } from "openai/helpers/zod";
 
-const LOCATION_DEFAULT="Philadelphia, PA"
-
-export async function searchGoogle({query, location=LOCATION_DEFAULT}) {
+export async function searchGoogle({query}) {
     console.log("\n\n"+"#".repeat(40))
-    console.log(`Searching Google[${location}]: ${query}\n\n`)
+    console.log(`Searching Google: ${query}\n\n`)
     const resp = await serp.getJson({
         engine: "google",
         api_key: process.env.SERP_API_KEY, // Get your API_KEY from https://serpapi.com/manage-api-key
-        q: query,
-        location
+        q: query
     })
     const stringResult = resp.organic_results.slice(0,5).map(el => `${el.title}: ${el.snippet}\n${el.link}`).join('\n\n')
     console.log(stringResult)
@@ -20,8 +17,7 @@ export async function searchGoogle({query, location=LOCATION_DEFAULT}) {
 
 // Define a Zod schema
 const searchGoogleSchema = z.object({
-    query: z.string().describe("The search query to send to gogole."),
-    location: z.string().optional().describe("What city to send the query from. This will effect the localization and provide better information for location specific queries.")
+    query: z.string().describe("The search query to send to gogole.")
 });
 
 export const searchGoogleToolConfig = zodFunction({

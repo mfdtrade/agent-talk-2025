@@ -3,19 +3,22 @@ import { markTodoDone, markTodoDoneToolConfig,
         addTodos, addTodosToolConfig,
         checkTodos, checkTodosToolConfig
      } from "./todoList.js";
+import { checkGoalDone, checkGoalDoneToolConfig } from "./llmJudge.js";
 
 export const functions = {
     searchGoogle,
     addTodos,
     markTodoDone,
-    checkTodos
+    checkTodos,
+    checkGoalDone
 }
 
 export const configsArray = [
     searchGoogleToolConfig,
     addTodosToolConfig,
     markTodoDoneToolConfig,
-    checkTodosToolConfig
+    checkTodosToolConfig,
+    checkGoalDoneToolConfig
 ]
 
 export default {

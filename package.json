@@ -9,6 +9,7 @@
     "step1-condition": "node -r dotenv/config src/_steps/step1-condition.js",
     "step2-tool": "node -r dotenv/config src/_steps/step2-tool.js",
     "step3-refactor": "node -r dotenv/config src/_steps/step3-refactor.js",
+    "step4-planning": "node -r dotenv/config src/_steps/step4-planning.js",
     "test": "echo 'What me worry?'"
   },
   "keywords": [],

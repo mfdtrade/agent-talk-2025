@@ -7,7 +7,7 @@ const done = []
 
 // ####################################################################################
 // CREATE - Add New Todos
-export function addTodos(newTodos) {
+export function addTodos({newTodos}) {
     newTodos.forEach(el => {
         todos.push(el)
     });
@@ -25,7 +25,7 @@ export const addTodosToolConfig = zodFunction({
 
 // ####################################################################################
 // Mark Todos Done
-export function markTodoDone(todo) {
+export function markTodoDone({todo}) {
     if (todos.includes(todo)) {
         todos = todos.filter(item => item !== todo)
         done.push(todo)
@@ -43,23 +43,33 @@ export const markTodoDoneToolConfig = zodFunction({
 })
 
 // ####################################################################################
-// Read the todo list
-export function checkTodos() {
-    let list = ''
+// Read the done list
+export function checkDoneTodos({}) {
     if (done.length > 0) {
-        list += `Todos marked as done:\n  - ${done.join('\n  - ')}`
-    }
-
-    if (todos.length > 0) {
-        list += `\n\nTodo list:\n  - ${todos.join('\n  - ')}`
+        return JSON.stringify(done)
     } else {
-        list += `\n\nNo todos remaining that aren't marked done.`
+        return "No tasks have been marked done."
     }
-    return list
+}
+
+export const checkDoneTasksToolConfig = zodFunction({
+    name: "checkDoneTask",
+    description: "Read every thing on the todo list that has been marked done.",
+    parameters: z.object(z.tuple([])).describe("No arguments are needed for this function.")
+})
+
+// ####################################################################################
+// Read the todo list
+export function checkTodos({}) {
+    if (todos.length > 0) {
+        return JSON.stringify(list)
+    } else {
+        return "The todo list is empty."
+    }
 }
 
 export const checkTodosToolConfig = zodFunction({
     name: "checkTodos",
-    description: "Read every thing on the todo list including all todos already marked done.",
-    parameters: z.void()
+    description: "Read every thing on the todo list.",
+    parameters: z.object(z.tuple([])).describe("No arguments are needed for this function.")
 })
