@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { zodFunction } from "openai/helpers/zod";
+import { todo } from "node:test";
 
 let todos = []
 const done = []
@@ -8,9 +9,9 @@ const done = []
 // ####################################################################################
 // CREATE - Add New Todos
 export function addTodos({newTodos}) {
-    newTodos.forEach(el => {
-        todos.push(el)
-    });
+    todos.push(...newTodos)
+    const delim = '\n  - '
+    console.log(`Todo list:${delim}${todos.join(delim)}`)
     return `Added ${newTodos.length} to todo list. Now have ${todos.length} todos.`
 }
 

@@ -1,7 +1,5 @@
-import { z } from 'zod'
-import { zodResponseFormat } from 'openai/helpers/zod';
 import tools from '../tools/index.js';
-import { completeWithTools, openai } from '../utils/ai.js';
+import { completeWithTools } from '../utils/ai.js';
 
 const goal = process.argv[2] || "I want to learn about building agents without a framework."
 

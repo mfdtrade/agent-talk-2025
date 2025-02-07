@@ -1,4 +1,5 @@
-import { z } from "zod";
+import { z } from 'zod'
+import { zodResponseFormat } from 'openai/helpers/zod';
 import { zodFunction } from "openai/helpers/zod";
 import { completeWithTools } from '../utils/ai.js'
 
