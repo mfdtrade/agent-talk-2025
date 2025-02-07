@@ -40,9 +40,9 @@ export async function browseWeb({url}) {
     const title = $("title").text().trim() || $("h1").first().text().trim();
     const mainContent = $("article, main, .content, #content, .post").first().html() || $("body").html();
     const content = turndown.turndown(mainContent || "");
-
-console.log(content)
-    return `---\ntitle: '${title}'\n---\n\n${content}`;
+    const result = `---\ntitle: '${title}'\n---\n\n${content}`
+    console.log(result.substring(0,500))        
+    return result;
 }
 
 export const browseWebToolConfig = zodFunction({

@@ -31,7 +31,7 @@ export async function checkGoalDone({goal, answer}) {
   })
   const check = JSON.parse(resp.choices[0].message.content)
   console.log("\n\n"+"#".repeat(40));
-  console.log(check)
+//   console.log(check)
   console.log(`LLM as judge: ${ check.done ? "👍":"👎"}`)
   return JSON.stringify(check)
 }

@@ -5,7 +5,7 @@ export const openai = new OpenAI();
 
 export async function completeWithTools(args) {
   // console.log("\n\n"+"#".repeat(40));
-  console.log(`Calling llm with: ${JSON.stringify(args.messages[args.messages.length-1])}`)
+  console.log(`Calling llm with: ${JSON.stringify(args.messages[args.messages.length-1]).substring(0,500)}`)
 
   const completion = await openai.chat.completions.create(args)
 
