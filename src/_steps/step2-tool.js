@@ -49,8 +49,7 @@ const searchGoogleToolConfig = {
               "location"
           ],
           "additionalProperties": false
-      },
-      "strict": true
+      }
   }
 };
 

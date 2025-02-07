@@ -16,10 +16,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
     "minisearch": "^7.1.1",
     "openai": "^4.82.0",
     "serpapi": "^2.1.0",
+    "turndown": "^7.2.0",
     "zod": "^3.24.1"
   }
 }
