@@ -16,7 +16,7 @@ async function main() {
 
   const completion = await openai.chat.completions.create({
     messages: [{ role: "developer", content: prompt }],
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     store: false
   });
 
@@ -25,7 +25,7 @@ async function main() {
   console.log(`Answer: ${answer}`);
 
   const check = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     messages: [{
       role: "developer",
       content: `You are a strict critic. Given the following question, determine if the answer a full anwser to the question.\n\nQuestion: ${prompt}\n\nAnswer: ${answer}`,

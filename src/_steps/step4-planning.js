@@ -25,7 +25,7 @@ async function main() {
       { role: "developer", content: prompt },
       { role: "user", content: goal}
     ],
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     tool_choice: "auto",
     tools: tools.configsArray,
     store: false

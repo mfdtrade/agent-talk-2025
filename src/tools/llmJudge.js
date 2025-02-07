@@ -14,7 +14,7 @@ If not you give specific feedback on what is missing in the form of actionable i
 // CREATE - Add New Todos
 export async function checkGoalDone({goal, answer}) {
   const resp = await completeWithTools({
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     messages: [{
       role: "developer",
       content: prompt

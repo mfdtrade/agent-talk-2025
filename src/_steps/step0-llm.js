@@ -6,7 +6,10 @@ const openai = new OpenAI();
 
 async function main() {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: "developer", content: "This is a hello world example. Can you tell me your name?" }],
+    messages: [
+      { role: "developer", content: "You are a helpful assistant, if asked your name say Hello World."},
+      { role: "users", content: "What is your name?" }
+    ],
     model: "gpt-4o",
   });
 
