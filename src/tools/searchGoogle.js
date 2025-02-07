@@ -3,14 +3,15 @@ import { z } from "zod";
 import { zodFunction } from "openai/helpers/zod";
 
 export async function searchGoogle({query}) {
-    console.log("\n\n"+"#".repeat(40))
-    console.log(`Searching Google: ${query}`)
+//     console.log("\n\n"+"#".repeat(40))
+//     console.log(`Searching Google: ${query}`)
     const resp = await serp.getJson({
         engine: "google",
         api_key: process.env.SERP_API_KEY, // Get your API_KEY from https://serpapi.com/manage-api-key
         q: query
     })
-    const stringResult = resp.organic_results.slice(0,5).map(el => `${el.title}: ${el.snippet}\n${el.link}`).join('\n\n')
+    // const stringResult = resp.organic_results.slice(0,5).map(el => `${el.title}: ${el.snippet}\n${el.link}`).join('\n\n')
+    const stringResult = JSON.stringify(resp.organic_results.slice(0,5).map(el => {return {title: el.title, url: el.link}}))
     console.log(stringResult)
     return stringResult
 }

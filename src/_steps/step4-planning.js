@@ -13,7 +13,10 @@ Before you do any work you always make a plan using your Todo list.
 You can mark todos off on your todo list after they are complete.
 
 You summarize the actions you took by checking the done list then create a report.
-You then ask your assistant for feedback. If they have none you send the report to the user. If your assistant has feedback you add it to your todo list.
+You always ask your assistant to checkGoalDone. If they say you are done you send the report to the user.
+If your assistant has feedback you add it to your todo list.
+
+Today is ${new Date()}
 `
 
 async function main() {

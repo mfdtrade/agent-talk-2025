@@ -9,9 +9,18 @@ export async function browseWeb({url}) {
     console.log(`Browsing web: ${url}`)
 
     // Use the built-in fetch (Node.js 18+)
-    const response = await fetch(url);
+    const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' +
+                        'AppleWebKit/537.36 (KHTML, like Gecko) ' +
+                        'Chrome/114.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+        }
+    });
     if (!response.ok) {
-      throw new Error(`Network error: ${response.statusText}`);
+        console.log(response)
+        return 'Error retrieving website.'
+        //throw new Error(`Network error: ${response.statusText}`);
     }
 
     // Get the HTML content as text
@@ -29,13 +38,11 @@ export async function browseWeb({url}) {
 
     // Extract title and main content
     const title = $("title").text().trim() || $("h1").first().text().trim();
-    const mainContent =
-      $("article, main, .content, #content, .post").first().html() ||
-      $("body").html();
+    const mainContent = $("article, main, .content, #content, .post").first().html() || $("body").html();
     const content = turndown.turndown(mainContent || "");
 
 console.log(content)
-    return content;
+    return `---\ntitle: '${title}'\n---\n\n${content}`;
 }
 
 export const browseWebToolConfig = zodFunction({

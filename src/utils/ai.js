@@ -34,6 +34,6 @@ export async function completeWithTools(args) {
     return completeWithTools(args)
   }
   console.log("\n\n"+"#".repeat(40));
-  console.log(completion.choices[0].message.content)
+  console.log(completion.choices[0].message.content.substring(0,500))
   return completion
 }
