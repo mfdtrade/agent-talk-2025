@@ -5,7 +5,7 @@ export const openai = new OpenAI();
 
 export async function completeWithTools(args) {
   // console.log("\n\n"+"#".repeat(40));
-  // console.log(`Calling llm with: ${JSON.stringify(args.messages)}`)
+  console.log(`Calling llm with: ${JSON.stringify(args.messages[messages.length-1])}`)
 
   const completion = await openai.chat.completions.create(args)
 
@@ -15,7 +15,7 @@ export async function completeWithTools(args) {
     const toolCalls = completion.choices[0].message.tool_calls;
 
     args.messages.push(completion.choices[0].message);
-    
+
     const toolResps = await Promise.all(toolCalls.map(async (toolCall) => {
       const toolArgs = JSON.parse(toolCall.function.arguments);
 

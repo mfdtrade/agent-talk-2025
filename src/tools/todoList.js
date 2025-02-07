@@ -63,7 +63,7 @@ export const checkDoneTasksToolConfig = zodFunction({
 // Read the todo list
 export function checkTodos({}) {
     if (todos.length > 0) {
-        return JSON.stringify(list)
+        return JSON.stringify(todos)
     } else {
         return "The todo list is empty."
     }
@@ -71,6 +71,6 @@ export function checkTodos({}) {
 
 export const checkTodosToolConfig = zodFunction({
     name: "checkTodos",
-    description: "Read every thing on the todo list.",
+    description: "Read everything on the todo list.",
     parameters: z.object(z.tuple([])).describe("No arguments are needed for this function.")
 })

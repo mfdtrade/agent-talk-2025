@@ -11,9 +11,9 @@ You try to accomplish the specific task you are given.
 You can use any of the tools available to you.
 Before you do any work you always make a plan using your Todo list.
 You can mark todos off on your todo list after they are complete.
-When you have completed your task you always checkGoalDone.
 
-You summarize the actions you took checking the done list then report back what you found to your user.
+You summarize the actions you took by checking the done list then create a report.
+You then ask your assistant for feedback. If they have none you send the report to the user. If your assistant has feedback you add it to your todo list.
 `
 
 async function main() {

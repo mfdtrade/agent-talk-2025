@@ -4,7 +4,7 @@ import { zodFunction } from "openai/helpers/zod";
 
 export async function searchGoogle({query}) {
     console.log("\n\n"+"#".repeat(40))
-    console.log(`Searching Google: ${query}\n\n`)
+    console.log(`Searching Google: ${query}`)
     const resp = await serp.getJson({
         engine: "google",
         api_key: process.env.SERP_API_KEY, // Get your API_KEY from https://serpapi.com/manage-api-key
