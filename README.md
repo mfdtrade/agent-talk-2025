@@ -3,13 +3,17 @@ Code and Content for Lets Build an Agent Talk Feb 2025
 
 
 Agent Definition:
-    | agent = llm + memory + planning + tools + while loop [1]
+
+> agent = llm + memory + planning + tools + while loop [1]
+
+
 
 Expand terms:
-    | agent = llm + (remember + recall) + planning + tools + (condition + loop)
+
+> agent = llm + (read + write) + planning + tools + (condition + loop)
 
 Rearrange:
-    | agent = llm + condition + tools + recall + remember + loop + planning
+> agent = llm + condition + tools + read + write + planning + loop
 
 
 ## 0: LLM
@@ -26,14 +30,13 @@ Check if the LLM call meets the requested question.
 SerpAPI for web search
 
 
-## 3: Recall
+## 3: Read
 
-## 4: Remember
+## 4: Write
 
-## 5: Loop
+## 5: Planning
 
-## 6: Planning
-
+## 6: Loop
 
 Planning:
 - prompt for step by step plan, push each onto todo list array
